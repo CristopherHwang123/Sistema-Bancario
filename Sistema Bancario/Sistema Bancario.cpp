@@ -67,7 +67,7 @@ int main()
 
     Cuentas c1("Juan carlos", 2000, true, true, 0);
     cout << "Ingrese la opcion: " << endl;
-    cin >> op;
+    cin >> op; //opcion
 
     do {
 
