@@ -1,5 +1,6 @@
 #include <string>
 #include <iostream>
+#include <cstdlib> // Para usar system("cls") o system("clear")
 using namespace std;
 
 //***********************************************************************Clase Cuentas********************************************
@@ -81,6 +82,15 @@ void menu() {
     cout << "" << endl;
 }
 
+//************************************************************Limpiar pantall**********************************************************************
+void limpiarPantalla() {
+#ifdef _WIN32
+    system("cls");  // Para Windows
+#else
+    system("clear");  // Para Linux/Unix
+#endif
+}
+
 int main() {
     //**************************************************************Variables****************************************************************************
     int op;
@@ -132,6 +142,7 @@ int main() {
 
         switch (op) {
         case 1: { // Retiros
+            limpiarPantalla();
             cout << "Ingrese el numero de cuenta desde la cual desea retirar: ";
             getline(cin, cuentaOrigen);
             cout << "Ingrese la cantidad a retirar: " << endl;
@@ -230,8 +241,10 @@ int main() {
                 cout << "Cuenta de origen no encontrada!" << endl;
             }
             break;
+            
         }
         case 2: { // Depositos
+            limpiarPantalla();
             cout << "Ingrese el numero de cuenta donde desea depositar: ";
             getline(cin, cuentaDestino);
             cout << "Ingrese la cantidad a depositar: " << endl;
@@ -329,6 +342,7 @@ int main() {
             else {
                 cout << "Cuenta destino no encontrada!" << endl;
             }
+
             break;
         }
         case 3: {
@@ -338,11 +352,13 @@ int main() {
             getline(cin, cuentaDestino);
             cout << "Ingrese la cantidad a transferir: " << endl;
             cin >> monto;
+            limpiarPantalla();
             cout << "Transfiriendo: " << monto << " desde la cuenta de: " << cuentaOrigen << endl;
             cout << " hacia la cuenta de: " << cuentaDestino << endl;
             break;
         }
         case 4: { // Mostrar cuentas existentes
+            limpiarPantalla();
             c1.mostrarCuenta();
             c2.mostrarCuenta();
             c3.mostrarCuenta();
@@ -382,6 +398,7 @@ int main() {
 
         cout << "Desea continuar? Si/No: ";
         cin >> caracter;
+        limpiarPantalla();
     } while (caracter == "Si" || caracter == "si");
 
     return 0;
