@@ -73,13 +73,16 @@ public:
 
 //**************************************************************Menu***********************************************************************************
 void menu() {
-    cout << "" << endl;
-    cout << "Escoja las opciones en el menu: " << endl;
-    cout << "1. Retiros" << endl;
-    cout << "2. Depositos" << endl;
-    cout << "3. Transferencias" << endl;
-    cout << "4. Cuentas existentes" << endl;
-    cout << "" << endl;
+    cout << "**************************************************" << endl;
+    cout << "*              Bienvenido al Menu               *" << endl;
+    cout << "**************************************************" << endl;
+    cout << "*  1. Retiros                                    *" << endl;
+    cout << "*  2. Depositos                                  *" << endl;
+    cout << "*  3. Transferencias                             *" << endl;
+    cout << "*  4. Cuentas existentes                        *" << endl;
+    cout << "**************************************************" << endl;
+    cout << "*    Por favor, elija una opcion (1-4):         *" << endl;
+    cout << "**************************************************" << endl;
 }
 
 //************************************************************Limpiar pantall**********************************************************************
