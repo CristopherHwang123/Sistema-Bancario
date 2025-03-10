@@ -24,7 +24,7 @@ public:
 
     void retiros(double monto) {
         if (intentos < 3) {
-            if (saldo >= monto && estado && monto <= (saldo/2)) {
+            if (saldo >= monto && estado == true && monto <= (saldo/2)) {
                 saldo -= monto;
                 cout << "El nuevo saldo es de: " << saldo << endl;
             }
@@ -32,10 +32,13 @@ public:
                 cout << "Fondos Insuficientes o cuenta bloqueada!" << endl;
                 intentos++;
                 cout << "Usted lleva: " << intentos << " intentos antes que se bloquee la cuenta." << endl;
+            }if (saldo <= 100) {
+                cout << "Cuidado el saldo cayo a niveles muy bajos!" << endl; 
             }
         }
         else {
             cout << "La cuenta ha sido bloqueada!" << endl;
+            cout << "El saldo de la cuenta es de: " << saldo << endl;
             estado = false;
         }
     }
@@ -90,7 +93,7 @@ void limpiarPantalla() {
 #ifdef _WIN32
     system("cls");  // Para Windows
 #else
-    system("clear");  // Para Linux/Unix
+    system("clear");  
 #endif
 }
 
@@ -103,7 +106,7 @@ int main() {
     string caracter;
 
     //**************************************************************Crear cuentas*************************************************************************
-    Cuentas c1("Juan Carlos", "1001", 2000, true, true, 0);
+    Cuentas c1("Juan Carlos", "1001", 400, true, true, 0);
     Cuentas c2("Maria Lopez", "1002", 1500, true, true, 0);
     Cuentas c3("Pedro Ramirez", "1003", 3000, true, true, 0);
     Cuentas c4("Ana Gutierrez", "1004", 2500, true, true, 0);
